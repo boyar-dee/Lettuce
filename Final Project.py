@@ -46,7 +46,6 @@ bird_img = pygame.transform.scale(bird_img, (75, 75))
 
 pygame.mixer.init()
 pygame.mixer.music.load("res/Menu.mp3")
-death_sound = pygame.mixer.Sound("res/Death.wav")
 
 easy_music = "res/easy_music.mp3"
 hard_music = "res/hard_music.mp3"
@@ -257,8 +256,6 @@ def game_loop(mode):
             if hit_cactus or hit_bird:
                 game_over = True
                 pygame.mixer.music.stop()
-                if score >= 200:
-                    death_sound.play()
                 if score > high_scores[mode]:
                     high_scores[mode] = score
 
